@@ -11,7 +11,7 @@ function defineGridSize() {
 
     do {
         gridSize = parseInt(prompt("What number of squares per side do you want (max 100)?"));
-    } while (gridSize > 100);
+    } while (gridSize > 100 || gridSize <= 0 || isNaN(gridSize));
 
     resetGrid();
     createGrid(gridSize);

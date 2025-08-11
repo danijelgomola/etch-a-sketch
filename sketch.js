@@ -1,5 +1,8 @@
 const container = document.querySelector(".container");
 const createGridBtn = document.querySelector(".create-grid-btn");
+const colorizeBtn = document.querySelector(".colorize-btn");
+const monochromeBtn = document.querySelector(".monochrome-btn");
+const resetBtn = document.querySelector(".reset-btn");
 
 const DEFAULT_GRID_SIZE = 10;
 
@@ -29,8 +32,16 @@ function createGrid(n) {
             cols.classList.add("cols");
             rows.appendChild(cols);
 
-            cols.addEventListener("mouseover", () => {
-                cols.style.backgroundColor = generateRandomColor();
+            colorizeBtn.addEventListener("click", () => {
+                cols.addEventListener("mouseover", () => {
+                    cols.style.backgroundColor = generateRandomColor();
+                });
+            });
+        
+            monochromeBtn.addEventListener("click", () => {
+                cols.addEventListener("mouseover", () => {
+                    cols.style.backgroundColor = "black";
+                });
             });
         }
     }
@@ -45,5 +56,10 @@ function generateRandomColor() {
 }
 
 createGridBtn.addEventListener("click", defineGridSize);
+
+resetBtn.addEventListener("click", () => {
+    resetGrid();
+    createGrid(DEFAULT_GRID_SIZE);
+});
 
 createGrid(DEFAULT_GRID_SIZE);

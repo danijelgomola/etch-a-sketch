@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Cabin Sketch", sans-serif;
 }
 
 body {
@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #eee;
 }
 
 button {
@@ -24,6 +25,8 @@ button {
 
 .title {
     margin-top: 32px;
+    font-size: 48px;
+    color: #333;
 }
 
 .buttons {
@@ -37,18 +40,38 @@ button {
 .colorize-btn,
 .reset-btn {
     padding: 8px 16px;
-    border: 2px solid #000;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid #333;
     border-radius: 3px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.create-grid-btn:hover,
+.monochrome-btn:hover,
+.colorize-btn:hover,
+.reset-btn:hover {
+    background-color: #ccc;
+}
+
+.create-grid-btn:active,
+.monochrome-btn:active,
+.colorize-btn:active,
+.reset-btn:active {
+    background-color: #fff;
 }
 
 .container {
     margin: 64px;
-    height: 90vh;
-    width: 90vh;
+    height: 500px;
+    width: 500px;
     display: flex;
-    flex-wrap: wrap;
+    flex: 1;
     flex-direction: column;
-    border: 1px solid #000;
+    outline: 2px solid #333;
+    background-color: #fff;
 }
 
 .rows {
@@ -58,4 +81,18 @@ button {
 
 .cols {
     flex: 1;
+}
+
+.footer {
+    font-size: 18px;
+    color: #333;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer a:hover {
+    color: #666;
 }

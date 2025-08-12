@@ -10,7 +10,13 @@ function defineGridSize() {
     let gridSize = 0;
 
     do {
-        gridSize = parseInt(prompt("What number of squares per side do you want (max 100)?"));
+        let input = prompt("What number of squares per side do you want (max 100)?");
+
+        if (input === "" || input === null) {
+            return false;
+        }
+
+        gridSize = parseInt(input);
     } while (gridSize > 100 || gridSize <= 0 || isNaN(gridSize));
 
     resetGrid();
